@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo cáo Bài 1: Hello Cloud API</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; padding: 24px; max-width: 900px; margin: 0 auto; color: #24292e; }
+    h1, h2 { color: #0366d6; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #dfe2e5; padding: 10px 14px; text-align: left; }
+    th { background-color: #f6f8fa; }
+    tr:nth-child(even) { background-color: #fbfcfd; }
+    .card { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; margin-bottom: 16px; }
+    code { background-color: rgba(27,31,35,0.05); padding: 0.2em 0.4em; border-radius: 3px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h1>Báo cáo Bài 1: Lập trình trên máy ảo đám mây đầu tiên</h1>
+
+  <h2>1. Bảng đo và so sánh môi trường</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tiêu chí</th>
+        <th>Máy cá nhân</th>
+        <th>GitHub Codespace</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Thời gian từ lúc bắt đầu đến khi chạy được node -v</strong></td>
+        <td>15 - 30 phút (tải bộ cài .msi, chạy wizard, cấu hình PATH)</td>
+        <td>Dưới 2 phút (~1 phút 30 giây, dựng tự động từ container)</td>
+      </tr>
+      <tr>
+        <td><strong>Số CPU, RAM (từ API / phần cứng)</strong></td>
+        <td>12 vCPU (10 Cores), 15.6 GB RAM</td>
+        <td>2 vCPU, 7.8 GB RAM</td>
+      </tr>
+      <tr>
+        <td><strong>Hệ điều hành</strong></td>
+        <td>Windows 11 (Intel Core 7 150U)</td>
+        <td>Linux 6.8.0-1064-azure</td>
+      </tr>
+      <tr>
+        <td><strong>Cách truy cập từ thiết bị khác</strong></td>
+        <td>Cùng mạng Wi-Fi LAN và mở tường lửa, hoặc dùng tunnel (ngrok)</td>
+        <td>Port Forwarding (chuyển Visibility sang Public, truy cập link HTTPS)</td>
+      </tr>
+      <tr>
+        <td><strong>Chi phí, đo bằng gì</strong></td>
+        <td>Chi phí mua phần cứng ban đầu, tiền điện tiêu thụ (kWh)</td>
+        <td>Đo bằng Core-giờ (Core-hours) và dung lượng lưu trữ (GB-month). Đã dùng: 0.52 hr máy 2-core (~1.04 core-hours) và 0.03 GB-month</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Đối chiếu 5 đặc tính điện toán đám mây của NIST</h2>
+  <div class="card">
+    <ol>
+      <li><strong>Tự phục vụ theo yêu cầu (On-demand self-service):</strong> Tự khởi tạo môi trường lập trình hoàn chỉnh thông qua thao tác bấm nút tạo Codespace trên GitHub mà không cần nhân viên IT can thiệp thủ công.</li>
+      <li><strong>Truy cập mạng rộng (Broad network access):</strong> Ứng dụng sau khi chuyển cổng sang chế độ Public có thể truy cập lập tức từ bất kỳ thiết bị nào (điện thoại, máy tính bảng) qua mạng Internet bằng giao thức HTTPS.</li>
+      <li><strong>Gộp tài nguyên (Resource pooling):</strong> Môi trường Codespace chạy trong container được cấp phát động, dùng chung hạ tầng máy chủ vật lý của Azure/GitHub với nhiều người dùng khác.</li>
+      <li><strong>Co giãn nhanh (Rapid elasticity):</strong> Cho phép thay đổi cấu hình phần cứng (nâng cấp từ 2-core lên 4-core hoặc 8-core) và khởi tạo/hủy máy ảo nhanh chóng chỉ với vài cú nhấp chuột.</li>
+      <li><strong>Dịch vụ đo lường được (Measured service):</strong> Hệ thống theo dõi chi tiết tài nguyên sử dụng theo thời gian thực tại trang Billing Usage (đo bằng Core-hours và dung lượng lưu trữ GB-month).</li>
+    </ol>
+  </div>
+</body>
+</html>
